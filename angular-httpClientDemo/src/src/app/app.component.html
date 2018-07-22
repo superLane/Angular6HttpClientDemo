@@ -1,0 +1,15 @@
+<hello name="{{ name }}"></hello>
+<p>
+  Start a movie search and see the magic :)
+</p>
+
+<input type="text" (keyup)="onKeyup($event)"> 
+<button (click)="doSearch()"> Search </button> 
+<p *ngIf="found"> You searched for: {{searchKey}} </p>
+<p *ngIf="movieNotFound"> Movie <strong>{{searchKey}}</strong> is not Found! </p>
+
+<div *ngIf="found">
+  <ul>
+      <li *ngFor="let movie of Search"> {{movie.Title}} {{movie.Year}} <img src={{movie.Poster}}>  </li>
+   </ul> 
+  </div>
